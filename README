@@ -15,3 +15,5 @@ Out[3]: u'http://i.imgur.com/cUWzn.jpg'
 In [4]: a.error
 Out[4]: ''
 
+
+Make sure to set anonymous imgur key.
