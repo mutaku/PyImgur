@@ -2,12 +2,14 @@
 PyImgur - Python IMGUR API wrapper
 """
 
-import settings
-import pycurl			
+import pycurl
 from xml.dom import minidom
 import cStringIO
 from xml.dom import minidom as xml
 
+
+# SET YOUR ANONYMOUS IMGUR KEY HERE
+anon_key = "******************"
 
 class UploadImage():
 	"""
@@ -50,7 +52,7 @@ class UploadImage():
 
 		# setup the basic parameters
 		params = [
-				("key", settings.imgur["anon_key"]),
+				("key", anon_key),
 				("image", (self.c.FORM_FILE, self.image))
 			]
 			
