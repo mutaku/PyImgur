@@ -37,11 +37,11 @@ class UploadImage():
 		self.message = ""
 		self.imageURL = {}
 		self.error = []
-	
+
 		if self.dhash and self.delete:
 			# if we have a hash and a delete trigger, lets try to wipe the image
 			self.wipe()
-		
+
 		else:
 			# fire away an upload - we will return an imageURL dictionary with attributes or an error
 			self.upload()
@@ -55,11 +55,11 @@ class UploadImage():
 				("key", anon_key),
 				("image", (self.c.FORM_FILE, self.image))
 			]
-			
+
 		# setup the url and pipe in our key and image
 		self.c.setopt(self.c.URL, "http://api.imgur.com/2/upload.xml")
 		self.c.setopt(self.c.HTTPPOST, params)
-		
+
 		# we want to capture the output so lets set the write output to go to our cStringIO so we can parse it
 		self.c.setopt(self.c.WRITEFUNCTION, self.response.write)
 
@@ -67,31 +67,31 @@ class UploadImage():
 			# run it
 			self.c.perform()
 			self.c.close()
-			
+
 		except:
 			self.error.append("Problem uploading image.")
 
 		if not self.error:
 			# parse the xml
 			self.parseXML()
-			
+
 
 		return self.message,self.imageURL,self.error
-		
+
 
 	def wipe(self):
 		"Wipe an anonymouse image from imgur"
 
 		deleteURL = "http://api.imgur.com/2/delete/%s" % self.dhash
-		
+
 		self.c.setopt(self.c.URL, deleteURL)
-		
+
 		self.c.setopt(self.c.WRITEFUNCTION, self.response.write)
 
 		try:
 			self.c.perform()
 			self.c.close()
-	
+
 		except:
 			self.error.append("Problem deleting image.")
 
@@ -101,7 +101,7 @@ class UploadImage():
 
 	def parseXML(self,delete=False):
 		"Parse the XML ouput from IMGUR and write to the imageURL dictionary"
-		
+
 		try:
 			# parse the XML string into the dom
 			xml = self.minidom.parseString(self.response.getvalue())
@@ -119,3 +119,4 @@ class UploadImage():
 
 		except:
 			self.error.append("Problem parsing XML output.")
+
