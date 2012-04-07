@@ -1,9 +1,9 @@
 ## PyImgur
 
-# Python IMGUR API wrapper
+ Python IMGUR API wrapper
 
 
-# Usage example:
+ Usage example:
 
 ```
 In [1]: from pyimgur import UploadImage as U
