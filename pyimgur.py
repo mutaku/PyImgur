@@ -6,10 +6,10 @@ import pycurl
 from xml.dom import minidom
 import cStringIO
 from xml.dom import minidom as xml
+import local_settings
 
-
-# SET YOUR ANONYMOUS IMGUR KEY HERE
-anon_key = "******************"
+# SET YOUR ANONYMOUS IMGUR KEY IN LOCAL_SETTINGS.PY (RENAME FROM .DIST)
+anon_key = local_settings.ANNON_KEY
 
 class UploadImage():
 	"""
