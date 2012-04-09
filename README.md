@@ -30,7 +30,7 @@ Out[8]: []
 
 __Make sure to set anonymous imgur key.__
 
-* Get your anon key here:
+* Get your anon key here: http://imgur.com/register/api_anon
 * Copy local_settings.py.dist to local_settings.py
 * Edit local_settings.py and set ANNON_KEY
 
