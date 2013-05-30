@@ -35,14 +35,14 @@ __Make sure to set anonymous imgur key.__
 * Edit local_settings.py and set ANNON_KEY
 * 
 
-### Using thunar add-on as a simple interface
+### Using the handler `handler.py` as a simple interface
 ```bash
-alias grabs="scrot -s -e 'python thunar_add.py \$f'"
+alias grabs="scrot -s -e 'python handler.py \$f'"
 ```
 Now just run `grabs` in your terminal, select your region, and watch the magic (browser opens uploaded image and you have the link in your clipboard).
 
-### Using the thunar add-on
-The `thunar_add.py` file is a quick example of integrating PyImgur with your system.
+### Using the handler
+The `handler.py` file is a quick example of integrating PyImgur with your system.
 To be able to right click on images and shoot them to Imgur with PyImgur, you can add a custom action 
 by clicking `Edit->Configure custom actions...` and then follow the images below for a walk-through.
 After upload, the script will open the newly uploaded file on Imgur in your system web browser for you to view and share.
