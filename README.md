@@ -41,6 +41,14 @@ by clicking `Edit->Configure custom actions...` and then follow the images below
 After upload, the script will open the newly uploaded file on Imgur in your system web browser for you to view and share.
 _You can also choose to show only on image files in the context portion of the second tab `Appearance Conditions` when configuring._
 
+### Using thunar add-on as a simple interface
+```bash
+alias grabs="scrot -s -e 'python thunar_add.py \$f'"
+```
+Now just run `grabs` in your terminal, select your region, and watch the magic (browser opens uploaded image and you have the link in your clipboard).
+
+
+
 ![PyImgur Thunar Setup](http://mutaku.com/pyimgur_thunar1.png)
 ![PyImgur Thunar Upload](http://mutaku.com/pyimgur_thunar2.png)
 ![PyImgur Thunar Browser Success](http://mutaku.com/pyimgur_thunar3.png)
