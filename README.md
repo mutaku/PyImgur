@@ -33,6 +33,13 @@ __Make sure to set anonymous imgur key.__
 * Get your anon key here: http://imgur.com/register/api_anon
 * Copy local_settings.py.dist to local_settings.py
 * Edit local_settings.py and set ANNON_KEY
+* 
+
+### Using thunar add-on as a simple interface
+```bash
+alias grabs="scrot -s -e 'python thunar_add.py \$f'"
+```
+Now just run `grabs` in your terminal, select your region, and watch the magic (browser opens uploaded image and you have the link in your clipboard).
 
 ### Using the thunar add-on
 The `thunar_add.py` file is a quick example of integrating PyImgur with your system.
@@ -41,11 +48,6 @@ by clicking `Edit->Configure custom actions...` and then follow the images below
 After upload, the script will open the newly uploaded file on Imgur in your system web browser for you to view and share.
 _You can also choose to show only on image files in the context portion of the second tab `Appearance Conditions` when configuring._
 
-### Using thunar add-on as a simple interface
-```bash
-alias grabs="scrot -s -e 'python thunar_add.py \$f'"
-```
-Now just run `grabs` in your terminal, select your region, and watch the magic (browser opens uploaded image and you have the link in your clipboard).
 
 
 
