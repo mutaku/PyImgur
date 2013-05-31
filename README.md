@@ -3,9 +3,8 @@
 _Python IMGUR API wrapper_
 
 Requirements:
-
-*pycurl
-*anonomous key from imgur
+* pycurl
+* anonomous key from imgur
  
 ### Usage example:
 
